@@ -16,3 +16,23 @@
 
 	@return map-get($z-layers, $layer);
 }
+
+@mixin browsercompat( $rule, $value ) {
+	#{$rule}: #{$value};
+	-webkit-#{$rule}: #{$value};
+	-ms-#{$rule}: #{$value};
+}
+
+// Media Queries
+
+@mixin tablet {
+	@media ( min-width: #{$g-breakpoint-tablet} ) {
+		@content;
+	}
+}
+
+@mixin desktop {
+	@media ( min-width: #{$g-breakpoint-desktop} ) {
+		@content;
+	}
+}

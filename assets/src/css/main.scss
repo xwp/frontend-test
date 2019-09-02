@@ -11,3 +11,289 @@
 // Base
 
 @import 'base/index';
+
+// Author Card
+
+.author-card {
+	text-align: center;
+	padding: 15px;
+	font-family: Arial, Helvetica, sans-serif;
+
+	@include tablet {
+		overflow: hidden;
+	}
+
+	.author-card_photo {
+		position: relative;
+		width: 80px;
+		height: 80px;
+		margin: 0 auto;
+		border-radius: 50%;
+		overflow: hidden;
+
+		@include tablet {
+			float: right;
+			width: 180px;
+			height: auto;
+			margin: 27px 27px 0 0;
+			border-radius: 0;
+		}
+
+		@include desktop {
+			margin-right: 6%;
+		}
+
+		img {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			width: auto;
+			height: auto;
+
+			@include browsercompat( 'transform', 'translate( -50%, -50% ) scale( 1.12 )' );
+
+			@include tablet {
+				position: inherit;
+				width: auto;
+				height: auto;
+				left: 0;
+
+				@include browsercompat( 'transform', 'none' );
+			}
+		}
+	}
+
+	.author-card_name-cont {
+		margin-bottom: 25px;
+
+		@include tablet {
+			float: left;
+			width: 500px;
+			text-align: left;
+			margin-bottom: 0;
+		}
+
+		.author-card_name {
+			padding: 0 50px;
+			margin-bottom: 4px;
+			font-size: 31px;
+			font-weight: $bold;
+
+			@include tablet {
+				display: inline-block;
+				vertical-align: middle;
+				padding: 0;
+			}
+		}
+	}
+
+	.author-card_social-cont {
+		display: block;
+		width: 183px;
+		margin: 0 auto 33px;
+		padding: 6px 10px 6px 39px;
+		background-color: #ebebeb;
+		font-size: 13px;
+		border-radius: 66px;
+
+		@include tablet {
+			display: inline-block;
+			width: 163px;
+			margin: 6px 0 0 7px;
+			vertical-align: top;
+			font-size: 12px;
+		}
+
+		&:hover,
+		&:focus {
+			text-decoration: none;
+			background-color: #cecece;
+
+		}
+
+		span {
+			position: relative;
+			color: #232323;
+
+			&::before {
+				content: 'f';
+				position: absolute;
+				top: -5px;
+				left: -44px;
+				width: 25px;
+				height: 25px;
+				color: #fff;
+				text-align: center;
+				background: #3a5795;
+				font-weight: $bold;
+				font-size: 18px;
+				border-radius: 50%;
+
+				@include tablet {
+					left: -35px;
+				}
+			}
+		}
+	}
+
+	.author-card_show-stories {
+		color: #55acee;
+		font-size: 14px;
+		font-family: Verdana, sans-serif;
+		text-align: left;
+		margin-bottom: 10px;
+		cursor: pointer;
+
+		&:hover {
+			color: #0e578e;
+		}
+
+		@include tablet {
+			float: left;
+			clear: left;
+		}
+
+		span {
+			position: relative;
+			padding-right: 30px;
+
+			&::after {
+				content: ' ';
+				position: absolute;
+				top: 1px;
+				right: 10px;
+				width: 10px;
+				height: 10px;
+				border-color: #19acf0;
+				border-right: 2px solid;
+				border-bottom: 2px solid;
+
+				@include browsercompat( 'transform', 'rotate( 45deg )' );
+			}
+		}
+	}
+
+	.author-card_show-stories.arrow-up {
+
+		span::after {
+			top: 7px;
+
+			@include browsercompat( 'transform', 'rotate( -135deg )' );
+		}
+	}
+
+	.author-card_stories {
+		text-align: left;
+		margin-bottom: 10px;
+		height: 0;
+		overflow: hidden;
+
+		@include tablet {
+			float: left;
+			width: 500px;
+			clear: left;
+		}
+
+		@include desktop {
+			width: 65%;
+		}
+
+		@include browsercompat( 'transition', '0.2s height ease-out' );
+
+		.author-card_story {
+			margin-bottom: 5px;
+
+			.author-card_story-title a {
+				color: #55acee;
+
+				&:hover,
+				&:focus {
+					color: #0e578e;
+					text-decoration: none;
+				}
+			}
+		}
+	}
+
+	.author-card_text-cont {
+		position: relative;
+
+		@include tablet {
+			float: left;
+			width: 500px;
+			clear: left;
+		}
+
+		@include desktop {
+			width: 69%;
+		}
+
+		.author-card_text {
+			height: 116px;
+			text-align: left;
+			font-size: 18px;
+			color: #222222;
+			overflow: hidden;
+
+			@include browsercompat( 'transition', '0.2s height ease-out' );
+
+			@include tablet {
+				height: auto;
+			}
+
+			@include desktop {
+				font-size: 16px;
+			}
+		}
+
+		.author-card_slide {
+			position: absolute;
+			left: 0;
+			bottom: -16%;
+			width: 100%;
+			height: 115px;
+			background-image: linear-gradient( to bottom, rgba( 255, 255, 255, 0 ), #ffffff );
+
+			@include tablet {
+				display: none;
+			}
+
+			span {
+				position: absolute;
+				background: #fff;
+				bottom: -7%;
+				left: 50%;
+				width: 35px;
+				height: 35px;
+				margin-left: -20px;
+				border-radius: 50%;
+				box-shadow: 0 0 2px 0 rgba( 252, 168, 168, 0.12 ), 0 2px 2px 0 rgba( 0, 0, 0, 0.24 ), 0 0 0 0.3px rgba( 0, 0, 0, 0.02 );
+
+				&::after {
+					content: ' ';
+					position: absolute;
+					top: 50%;
+					right: 48%;
+					width: 13px;
+					height: 13px;
+					margin: -8px -6px 0 0;
+					border-color: #979797;
+					border-right: 2px solid;
+					border-bottom: 2px solid;
+
+					@include browsercompat( 'transform', 'rotate( 45deg )' );
+				}
+			}
+		}
+
+		.author-card_slide.collapsed {
+			background-image: none;
+
+			span::after {
+				margin: -3px -6px 0 0;
+
+				@include browsercompat( 'transform', 'rotate( -135deg )' );
+			}
+		}
+	}
+}
