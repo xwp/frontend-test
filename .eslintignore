@@ -1,4 +1,1 @@
-**/*.min.js
-**/node_modules/**
-**/vendor/**
-**/dist/**
+js/dist
