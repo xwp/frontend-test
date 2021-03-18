@@ -1,0 +1,28 @@
+// Variables
+//
+// Variables used site-wide.
+
+// Breakpoints
+// How to use corresponding mixin:
+// @media ( query( min, mobile ) ) {
+// Based on: https://www.npmjs.com/package/scss-query
+$g-breakpoint-mobile: 480px;
+$g-breakpoint-tablet: 768px;
+$g-breakpoint-desktop: 900px;
+
+$query-breakpoints: (
+	'mobile': $g-breakpoint-mobile,
+	'tablet': $g-breakpoint-tablet,
+	'desktop': $g-breakpoint-desktop
+);
+
+// Z-Index named layers
+// How to use corresponding mixin:
+// z-index: z( 'mountain' );
+// Based on: https://www.sitepoint.com/better-solution-managing-z-index-sass/
+$z-layers: (
+	'mountain': 1000,
+	'hill': 100,
+	'default': 1,
+	'depression': -100
+);
