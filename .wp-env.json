@@ -1,0 +1,6 @@
+{
+  "core": "./tools/wordpress",
+  "themes": [
+    "."
+  ]
+}

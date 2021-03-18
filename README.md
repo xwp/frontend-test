@@ -11,7 +11,7 @@ If you don't have the [Sketch application](https://www.sketchapp.com/), request 
 
 ### Installation
 
-**The workflow requires Node >=8.11.x**
+**The workflow requires Node >=14.x**
 
 Install using the following command:
 

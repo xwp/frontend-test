@@ -1,18 +1,12 @@
 {
-	"extends": [ "plugin:@wordpress/eslint-plugin/esnext" ],
+	"extends": [
+		"plugin:@wordpress/eslint-plugin/recommended-with-formatting"
+	],
 	"env": {
 		"browser": true,
-		"es6": true,
-		"node": true,
-		"jquery": true
-	},
-	"parserOptions": {
-		"sourceType": "module"
-	},
-	"globals": {
-		"jQuery": true
+		"es6": true
 	},
 	"rules": {
-		"wrap-iife": [2, "inside"]
+		"@wordpress/no-global-event-listener": "off"
 	}
 }
