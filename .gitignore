@@ -3,3 +3,4 @@
 .idea
 yarn.lock
 *.css.map
+/dist/

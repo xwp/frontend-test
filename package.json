@@ -2,14 +2,10 @@
   "name": "xwp-test",
   "version": "1.0.0",
   "description": "XWP Test",
-  "main": "index.js",
-  "scripts": {
-    "dev": "cross-env NODE_ENV=development gulp --gulpfile $(npm root)/undercurrent/src/index.js --cwd $(npm prefix) --workflow theme",
-    "prod": "cross-env NODE_ENV=production gulp --gulpfile $(npm root)/undercurrent/src/index.js --cwd $(npm prefix) --workflow theme"
-  },
   "engines": {
-    "node": ">=8.11.x"
+    "node": ">=14.0.0"
   },
+  "homepage": "https://github.com/xwp/frontend-test#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com:xwp/frontend-test.git"
@@ -20,48 +16,50 @@
     "url": "https://github.com/xwp/frontend-test/issues"
   },
   "browserslist": [
-    "last 1 version",
-    "> 4%",
-    "not dead"
+    "last 2 Chrome versions",
+    "last 2 Firefox versions",
+    "last 2 Safari versions",
+    "last 2 Edge versions",
+    "last 2 iOS versions",
+    "last 1 Android version",
+    "last 1 ChromeAndroid version",
+    "> 2%"
   ],
-  "workflows": {
-    "component": {
-      "cwd": "assets",
-      "schema": "theme",
-      "tasks": {
-        "js": {
-          "entry": {
-            "main": "./main.js"
-          }
-        }
-      }
-    }
-  },
-  "stylelint": {
-    "extends": "stylelint-config-xwp/scss",
-    "plugins": [
-      "stylelint-no-unsupported-browser-features"
-    ],
-    "rules": {
-      "plugin/no-unsupported-browser-features": [
-        true,
-        {
-          "ignore": [
-            "outline",
-            "flexbox",
-            "outline",
-            "viewport-units",
-            "will-change",
-            "border-radius",
-            "css-boxshadow"
-          ]
-        }
-      ]
-    }
-  },
-  "homepage": "https://github.com/xwp/frontend-test#readme",
   "devDependencies": {
-    "undercurrent": "github:xwp/undercurrent",
-    "scss-query": "^1.0.1"
+    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+    "@csstools/postcss-sass": "^4.0.0",
+    "@wordpress/env": "^3.0.2",
+    "@wordpress/eslint-plugin": "^9.0.1",
+    "@wordpress/scripts": "^13.0.3",
+    "@wordpress/stylelint-config": "^19.0.1",
+    "del": "^6.0.0",
+    "eslint": "^7.22.0",
+    "gulp": "^4.0.2",
+    "gulp-postcss": "^9.0.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-rtlcss": "^1.4.1",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.2.6",
+    "postcss-clean": "^1.2.2",
+    "postcss-cli": "^8.3.1",
+    "postcss-color-function": "^4.1.0",
+    "postcss-preset-env": "^6.7.0",
+    "postcss-scss": "^3.0.4",
+    "postcss-shorthand-expand": "^1.0.1",
+    "webpackbar": "^5.0.0-3"
+  },
+  "scripts": {
+    "dev": "npm-run-all --parallel dev:*",
+    "dev:css": "gulp watch",
+    "dev:js": "wp-scripts start",
+    "build": "npm-run-all build:*",
+    "build:css": "gulp css-build",
+    "build:js": "wp-scripts build",
+    "lint": "npm-run-all --parallel lint:*",
+    "lint:css": "wp-scripts lint-style",
+    "lint:js": "wp-scripts lint-js",
+    "format": "npm-run-all --parallel format:*",
+    "format:css": "npm run lint:css -- --fix",
+    "format:js": "npm run lint:js -- --fix"
   }
 }

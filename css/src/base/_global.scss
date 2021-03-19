@@ -74,7 +74,7 @@ select {
 	border: 1px solid #ccc;
 	border-radius: 3px;
 	outline: none;
-	box-shadow: inset 0 1px 2px rgba( 0, 0, 0, 0.15 );
+	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15);
 }
 
 /*
@@ -129,7 +129,7 @@ big {
  * Correct the odd appearance in Chrome and Safari.
  */
 /* stylelint-disable plugin/no-unsupported-browser-features */
-[type='search'] {
+[type="search"] {
 	-webkit-appearance: textfield;
 
 	&::-webkit-search-cancel-button,
