@@ -3,25 +3,26 @@
 /// @param  {List} $list - list to sort
 /// @return {List}
 @function quick-sort($list) {
-  $less:  ();
-  $equal: ();
-  $large: ();
+	$less:  ();
+	$equal: ();
+	$large: ();
 
-  @if length($list) > 1 {
-    $seed: nth($list, ceil(length($list) / 2));
+	@if length($list) > 1 {
+		$seed: nth($list, ceil(length($list) / 2));
 
-    @each $item in $list {
-      @if ($item == $seed) {
-        $equal: append($equal, $item);
-      } @else if ($item < $seed) {
-        $less: append($less, $item);
-      } @else if ($item > $seed) {
-        $large: append($large, $item);
-      }
-    }
+		@each $item in $list {
 
-    @return join(join(quick-sort($less), $equal), quick-sort($large));
-  }
+			@if ($item == $seed) {
+				$equal: append($equal, $item);
+			} @else if ($item < $seed) {
+				$less: append($less, $item);
+			} @else if ($item > $seed) {
+				$large: append($large, $item);
+			}
+		}
 
-  @return $list;
+		@return join(join(quick-sort($less), $equal), quick-sort($large));
+	}
+
+	@return $list;
 }

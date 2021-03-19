@@ -24,11 +24,11 @@ $base-font-size: 16px !default;
 /// @prop   {Number} breakpoints.huge   - TVs
 /// @prop   {Number} breakpoints.giant  - Retina sickness
 $query-breakpoints: (
-  'micro':   320px,
-  'mini':    480px,
-  'small':   768px,
-  'medium':  960px,
-  'large':  1440px,
-  'huge':   2560px,
-  'giant':  5120px
+	"micro":   320px,
+	"mini":    480px,
+	"small":   768px,
+	"medium":  960px,
+	"large":  1440px,
+	"huge":   2560px,
+	"giant":  5120px
 ) !default;
