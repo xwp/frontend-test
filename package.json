@@ -58,11 +58,8 @@
     "lint": "npm-run-all --parallel lint:*",
     "lint:css": "wp-scripts lint-style",
     "lint:js": "wp-scripts lint-js",
-    "lint:php": "composer lint",
     "format": "npm-run-all --parallel format:*",
     "format:css": "npm run lint:css -- --fix",
-    "format:js": "npm run lint:js -- --fix",
-    "test": "npm-run-all test:*",
-    "bundle": "dir-archiver --src . --dest ../_s.zip --exclude .DS_Store .stylelintrc.json .eslintrc .git .gitattributes .github .gitignore README.md composer.json composer.lock node_modules vendor package-lock.json package.json .travis.yml phpcs.xml.dist sass style.css.map"
+    "format:js": "npm run lint:js -- --fix"
   }
 }
